@@ -23,6 +23,7 @@
 
 - [Medical Graphics 3D body visualizations](https://www.medicalgraphics.de/en/project/anatomical-3d-models-in-web-browser/)
 - [BioCloud 3D Anatomy](https://www.intervoke.com/biocloud3d-anatomy)
+- [WebXR](https://immersiveweb.dev/#react-xr)
 
 ### Wearables' APIs
 
@@ -47,3 +48,34 @@
   - GPS
   - Accelerometer
   - Glucose
+
+## Notes
+
+### Design
+
+- We start with wireframes and build the functionalities quite naked, then we dress them based on the branding agency guidelines and decisions we make along the way.
+- We can start thinking about fluent flows which bring you from the 3d visualization to the metrics/scores view showing the areas of improvements, I can think about timlines dotted charts or donuts/rings charts, something that gives a perspective on future possible improvements and stimulates patients to work on themselves and get a next appointment.
+- We could use Stitch to help with design (AI assisted)
+
+Screens to sketch:
+- basic auth (not so crucial)
+- booking appointment
+- dashboard with data visualization, maybe three views/perspectives:
+  - **user**: from the app or website
+  - **doctor**: from a ipad or directly on the studio's monitor
+  - **appointment**:
+
+- think about 3d visualization of the body, which kind of texture (Neko ussed blue dots) would be cool to apply to get a fancy stylised representation of it. Otherwise the branding agency can propose that.
+
+### Architecture
+
+- Think about wether to start with an app or with a website. See compatibility with looking glass which can uses ipad to control the view as in [this video](https://youtu.be/b6Qb-w9DT60). We can either start with the application with react native, and parallely build a simple website which hosts parts of the website like the booking module which can be embedded in either the app or the marketing website. The best would probably be to build everything in react with the least dependencies on either NextJS (website) or React Native (app) so that we can share the most code in either case. Especially the 3d view let's try to use the most standrd WebGL and WebXR technologies.
+  - Consider that on the appointment the screen used (if we don't go for the looking glass) will have a high resolution
+  - Consider we want an immersive experience during the appointment so no standard Android or iOS default UIs but a full screen view
+
+- Booking appointment module:
+  - see Serghei scheduler proposal or consider some simple SaaS or even Google Calendar API's integration
+
+### Next steps
+
+On Tuesday 9th September or for the first week a clear idea of the architecture of the project, and some wireframes which put on paper the screens, the UX flows, etc. By the end of the or sooner let's try to have a timeline with steps, the idea is to go live by the end of year, see if it's doable.
