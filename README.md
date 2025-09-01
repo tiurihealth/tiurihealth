@@ -17,6 +17,7 @@
 ### Similar projects
 
 - [Nozomi Health](https://studio.nozomihealth.com/)
+- [Neko Health](https://www.nekohealth.com/se/en)
 
 ### 3D Visualiazionts
 
